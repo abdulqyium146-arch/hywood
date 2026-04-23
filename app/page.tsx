@@ -1,65 +1,84 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import Hero from "@/components/Hero";
+import Services from "@/components/Services";
+import WhyUs from "@/components/WhyUs";
+import Reviews from "@/components/Reviews";
+import LocationCoverage from "@/components/LocationCoverage";
+import CTA from "@/components/CTA";
+import FAQ from "@/components/FAQ";
+import { generateMetadata as buildMetadata, generateLocalBusinessSchema, generateFaqSchema, SITE_URL, BUSINESS_NAME } from "@/lib/seo";
 
-export default function Home() {
+export const metadata: Metadata = buildMetadata({
+  title: `${BUSINESS_NAME} | 24/7 Auto Locksmith Greater Manchester`,
+  description:
+    "QuickKey Auto Locksmiths — professional 24/7 car lockout, key replacement and key programming services across Greater Manchester. 30-minute response. Call now.",
+  path: "/",
+  keywords: [
+    "auto locksmith Greater Manchester",
+    "car lockout service Manchester",
+    "24 hour auto locksmith",
+    "car key replacement Manchester",
+    "emergency auto locksmith near me",
+  ],
+});
+
+const homeFaqs = [
+  {
+    question: "What areas do you cover?",
+    answer:
+      "We cover Heywood, Rochdale, Bury, Oldham and all surrounding areas across Greater Manchester. If you're unsure whether we reach your location, just call us.",
+  },
+  {
+    question: "How quickly can you reach me?",
+    answer:
+      "Our mobile locksmiths are positioned across Greater Manchester and aim to reach you within 30 minutes of your call.",
+  },
+  {
+    question: "Are you available on Christmas Day and bank holidays?",
+    answer:
+      "Yes — we operate 24 hours a day, 365 days a year with no exceptions. Emergencies don't take holidays, and neither do we.",
+  },
+  {
+    question: "Will you damage my car to get inside?",
+    answer:
+      "Never. We use only professional non-destructive entry techniques. Your car will be in exactly the same condition when we leave.",
+  },
+  {
+    question: "Can you replace a car key without the original?",
+    answer:
+      "Yes. Even if you have no working keys, we can cut and program a brand-new key using advanced EEPROM and OBD programming methods for most vehicle makes and models.",
+  },
+  {
+    question: "How much does an auto locksmith callout cost?",
+    answer:
+      "Prices vary depending on the service and vehicle type. We always provide a fixed quote before any work begins — no hidden charges.",
+  },
+];
+
+export default function HomePage() {
+  const localBusinessSchema = generateLocalBusinessSchema({});
+  const faqSchema = generateFaqSchema(homeFaqs);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Hero
+        headline="24/7 Auto Locksmith Across Greater Manchester"
+        subheadline="Locked out of your car? Lost your keys? Our professional mobile locksmiths reach you in approximately 30 minutes — day or night, 365 days a year."
+      />
+      <Services />
+      <WhyUs />
+      <Reviews />
+      <LocationCoverage />
+      <FAQ faqs={homeFaqs} heading="Frequently Asked Questions" />
+      <CTA />
+    </>
   );
 }

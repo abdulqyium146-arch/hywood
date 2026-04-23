@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 import Hero from "@/components/Hero";
 import WhyUs from "@/components/WhyUs";
 import Reviews from "@/components/Reviews";
 import FAQ from "@/components/FAQ";
 import LocationCoverage from "@/components/LocationCoverage";
+import RelatedServices from "@/components/RelatedServices";
 import CTA from "@/components/CTA";
 import {
   generateMetadata as buildMetadata,
@@ -103,7 +105,12 @@ export default function CarKeyReplacementPage() {
               QuickKey Auto Locksmiths carries state-of-the-art key-cutting machines and vehicle-specific programming tools. Our mobile units can generate and programme a brand-new key at your location — no recovery truck needed, no expensive main dealer appointment.
             </p>
             <p>
-              We work with all major car manufacturers and cover every postcode across Greater Manchester, including Heywood, Rochdale, Bury, Oldham, and surrounding areas.
+              We work with all major car manufacturers and cover every postcode across Greater Manchester, including{" "}
+              <Link href="/heywood" className="text-yellow-600 hover:underline font-medium">Heywood</Link>,{" "}
+              <Link href="/rochdale" className="text-yellow-600 hover:underline font-medium">Rochdale</Link>,{" "}
+              <Link href="/bury" className="text-yellow-600 hover:underline font-medium">Bury</Link>,{" "}
+              <Link href="/oldham" className="text-yellow-600 hover:underline font-medium">Oldham</Link>,
+              {" "}and surrounding areas.
             </p>
           </div>
 
@@ -126,6 +133,7 @@ export default function CarKeyReplacementPage() {
       <WhyUs />
       <Reviews />
       <FAQ faqs={faqs} heading="Car Key Replacement — FAQs" />
+      <RelatedServices currentHref="/car-key-replacement" />
       <LocationCoverage />
       <CTA
         heading="Lost Your Car Keys? Call QuickKey Now"

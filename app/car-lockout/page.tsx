@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 import Hero from "@/components/Hero";
 import WhyUs from "@/components/WhyUs";
 import Reviews from "@/components/Reviews";
 import FAQ from "@/components/FAQ";
 import LocationCoverage from "@/components/LocationCoverage";
+import RelatedServices from "@/components/RelatedServices";
 import CTA from "@/components/CTA";
 import {
   generateMetadata as buildMetadata,
@@ -103,7 +105,16 @@ export default function CarLockoutPage() {
               Our mobile auto locksmiths are based across Greater Manchester and carry professional vehicle entry tools for every type of modern car. We never use brute-force methods — every entry is carried out with specialist equipment that leaves your vehicle in perfect condition.
             </p>
             <p>
-              From supermarket car parks in Rochdale to residential streets in Heywood, we've helped thousands of drivers get back into their vehicles without damage and without unnecessary delay.
+              From supermarket car parks in{" "}
+              <Link href="/rochdale" className="text-yellow-600 hover:underline font-medium">Rochdale</Link>
+              {" "}to residential streets in{" "}
+              <Link href="/heywood" className="text-yellow-600 hover:underline font-medium">Heywood</Link>,
+              we've helped thousands of drivers get back into their vehicles without damage and without unnecessary delay.
+              We also cover{" "}
+              <Link href="/bury" className="text-yellow-600 hover:underline font-medium">Bury</Link>
+              {" "}and{" "}
+              <Link href="/oldham" className="text-yellow-600 hover:underline font-medium">Oldham</Link>
+              {" "}across the full Greater Manchester area.
             </p>
           </div>
 
@@ -126,6 +137,7 @@ export default function CarLockoutPage() {
       <WhyUs />
       <Reviews />
       <FAQ faqs={faqs} heading="Car Lockout Service — FAQs" />
+      <RelatedServices currentHref="/car-lockout" />
       <LocationCoverage />
       <CTA
         heading="Locked Out? Call Our 24/7 Car Lockout Team"

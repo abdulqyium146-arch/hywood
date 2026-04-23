@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 import Hero from "@/components/Hero";
 import WhyUs from "@/components/WhyUs";
 import Reviews from "@/components/Reviews";
 import FAQ from "@/components/FAQ";
 import LocationCoverage from "@/components/LocationCoverage";
+import RelatedServices from "@/components/RelatedServices";
 import CTA from "@/components/CTA";
 import {
   generateMetadata as buildMetadata,
@@ -103,7 +105,16 @@ export default function TwentyFourHourPage() {
               When you call us at 3am, you speak to a real person who dispatches a local mobile locksmith immediately. Our night-time response times match our daytime average — approximately 30 minutes — because we maintain locksmiths on duty across the region at all hours.
             </p>
             <p>
-              All of our services — car lockouts, key replacement, key programming, and broken key extraction — are available around the clock. There's no reduced night-time offering, just the same professional, damage-free service at any hour.
+              All of our services —{" "}
+              <Link href="/car-lockout" className="text-yellow-600 hover:underline font-medium">car lockouts</Link>,{" "}
+              <Link href="/car-key-replacement" className="text-yellow-600 hover:underline font-medium">key replacement</Link>,{" "}
+              <Link href="/key-programming" className="text-yellow-600 hover:underline font-medium">key programming</Link>,
+              {" "}and broken key extraction — are available around the clock across{" "}
+              <Link href="/heywood" className="text-yellow-600 hover:underline font-medium">Heywood</Link>,{" "}
+              <Link href="/rochdale" className="text-yellow-600 hover:underline font-medium">Rochdale</Link>,{" "}
+              <Link href="/bury" className="text-yellow-600 hover:underline font-medium">Bury</Link>,{" "}
+              <Link href="/oldham" className="text-yellow-600 hover:underline font-medium">Oldham</Link>,
+              {" "}and the wider Greater Manchester area. There's no reduced night-time offering, just the same professional, damage-free service at any hour.
             </p>
           </div>
 
@@ -126,6 +137,7 @@ export default function TwentyFourHourPage() {
       <WhyUs />
       <Reviews />
       <FAQ faqs={faqs} heading="24-Hour Auto Locksmith — FAQs" />
+      <RelatedServices currentHref="/24-hour-auto-locksmith" />
       <LocationCoverage />
       <CTA
         heading="Need a Locksmith Right Now? Call 24/7"

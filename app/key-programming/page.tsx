@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
 import Hero from "@/components/Hero";
 import WhyUs from "@/components/WhyUs";
 import Reviews from "@/components/Reviews";
 import FAQ from "@/components/FAQ";
 import LocationCoverage from "@/components/LocationCoverage";
+import RelatedServices from "@/components/RelatedServices";
 import CTA from "@/components/CTA";
 import {
   generateMetadata as buildMetadata,
@@ -103,7 +105,12 @@ export default function KeyProgrammingPage() {
               QuickKey Auto Locksmiths invests heavily in the latest key programming and diagnostic equipment. Our mobile locksmiths can handle everything from adding a spare key to an existing system, to performing a full 'all keys lost' reset where the vehicle's key memory is entirely rewritten.
             </p>
             <p>
-              We serve the full Greater Manchester area and can typically reach you within 30 minutes, completing most key programming jobs on the spot at your location.
+              We serve the full Greater Manchester area — including{" "}
+              <Link href="/heywood" className="text-yellow-600 hover:underline font-medium">Heywood</Link>,{" "}
+              <Link href="/rochdale" className="text-yellow-600 hover:underline font-medium">Rochdale</Link>,{" "}
+              <Link href="/bury" className="text-yellow-600 hover:underline font-medium">Bury</Link>, and{" "}
+              <Link href="/oldham" className="text-yellow-600 hover:underline font-medium">Oldham</Link>{" "}
+              — and can typically reach you within 30 minutes, completing most key programming jobs on the spot at your location.
             </p>
           </div>
 
@@ -126,6 +133,7 @@ export default function KeyProgrammingPage() {
       <WhyUs />
       <Reviews />
       <FAQ faqs={faqs} heading="Key Programming — FAQs" />
+      <RelatedServices currentHref="/key-programming" />
       <LocationCoverage />
       <CTA
         heading="Need Key Programming in Greater Manchester?"

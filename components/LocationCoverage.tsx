@@ -6,6 +6,9 @@ interface LocationCoverageProps {
   nearbyAreas?: string[];
 }
 
+// Map location names (lowercase) → slugs for linking nearbyAreas
+const locationSlugMap = new Map(locations.map((l) => [l.name.toLowerCase(), l.slug]));
+
 export default function LocationCoverage({ currentSlug, nearbyAreas }: LocationCoverageProps) {
   return (
     <section className="py-16 bg-white">
@@ -32,10 +35,7 @@ export default function LocationCoverage({ currentSlug, nearbyAreas }: LocationC
               }`}
             >
               <div className="text-2xl mb-2">📍</div>
-              <div
-                style={{ color: "#0B1F3A" }}
-                className="font-bold text-sm"
-              >
+              <div style={{ color: "#0B1F3A" }} className="font-bold text-sm">
                 {loc.name}
               </div>
               <div className="text-gray-400 text-xs mt-1">{loc.postcode}</div>
@@ -47,7 +47,25 @@ export default function LocationCoverage({ currentSlug, nearbyAreas }: LocationC
           <div className="bg-gray-50 rounded-xl p-6">
             <p className="text-sm text-gray-600 text-center">
               <span className="font-semibold">Also serving nearby: </span>
-              {nearbyAreas.join(" · ")}
+              {nearbyAreas.map((area, i) => {
+                const slug = locationSlugMap.get(area.toLowerCase());
+                return (
+                  <span key={area}>
+                    {i > 0 && <span className="mx-1 text-gray-400">·</span>}
+                    {slug ? (
+                      <Link
+                        href={`/${slug}`}
+                        className="hover:text-yellow-600 hover:underline transition-colors"
+                        style={{ color: "#0B1F3A" }}
+                      >
+                        {area}
+                      </Link>
+                    ) : (
+                      <span>{area}</span>
+                    )}
+                  </span>
+                );
+              })}
             </p>
           </div>
         )}

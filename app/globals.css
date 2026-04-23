@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --brand-dark: #0B1F3A;
+  --brand-yellow: #FFC107;
+  --brand-yellow-dark: #e6ac00;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sticky call button - mobile only */
+.sticky-call-btn {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 9999;
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .sticky-call-btn {
+    display: none;
+  }
+}
+
+/* Pulse animation for CTA */
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7); }
+  70% { box-shadow: 0 0 0 14px rgba(255, 193, 7, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
+}
+
+.pulse-cta {
+  animation: pulse-ring 2s infinite;
+}

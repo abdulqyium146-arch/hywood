@@ -19,6 +19,11 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   poweredByHeader: false,
 
+  // Workaround for Next.js 16.2.4 bug: generateBuildId defaults to undefined
+  // but the build runner calls generate() unconditionally, causing a TypeError.
+  // Returning null triggers the built-in nanoid fallback.
+  generateBuildId: async () => null,
+
   turbopack: {
     root: __dirname,
   },

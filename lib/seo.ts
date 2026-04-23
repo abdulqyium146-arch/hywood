@@ -3,7 +3,7 @@ import { BUSINESS_NAME, PHONE_NUMBER } from "@/data/locations";
 
 export { BUSINESS_NAME } from "@/data/locations";
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://quickkeylocksmiths.co.uk";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://heywoodlocksmiths.com";
 
 export function generateMetadata({
   title,
@@ -58,37 +58,56 @@ export function generateLocalBusinessSchema({
   location?: { name: string; postcode: string; county: string };
   description?: string;
 }) {
+  const address = location
+    ? {
+        "@type": "PostalAddress",
+        addressLocality: location.name,
+        postalCode: location.postcode,
+        addressRegion: location.county,
+        addressCountry: "GB",
+      }
+    : {
+        "@type": "PostalAddress",
+        addressLocality: "Heywood",
+        postalCode: "OL10",
+        addressRegion: "Greater Manchester",
+        addressCountry: "GB",
+      };
+
   return {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "LocksmithBusiness"],
+    "@id": `${SITE_URL}/#business`,
     name,
     url,
     telephone: phone,
     description:
       description ||
-      `${BUSINESS_NAME} provides 24/7 auto locksmith services including car lockouts, key replacement, and key programming.`,
+      `${BUSINESS_NAME} provides 24/7 auto locksmith services including car lockouts, key replacement, and key programming across Greater Manchester.`,
     image: `${SITE_URL}/og-image.jpg`,
     logo: `${SITE_URL}/logo.png`,
     openingHours: "Mo-Su 00:00-23:59",
     priceRange: "££",
     currenciesAccepted: "GBP",
     paymentAccepted: "Cash, Credit Card, Debit Card",
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 53.5929,
+      longitude: -2.2183,
+    },
     areaServed: location
-      ? [location.name, location.county]
-      : ["Heywood", "Rochdale", "Bury", "Oldham", "Greater Manchester"],
-    address: location
-      ? {
-          "@type": "PostalAddress",
-          addressLocality: location.name,
-          postalCode: location.postcode,
-          addressCountry: "GB",
-        }
-      : {
-          "@type": "PostalAddress",
-          addressLocality: "Heywood",
-          postalCode: "OL10",
-          addressCountry: "GB",
-        },
+      ? [
+          { "@type": "City", name: location.name },
+          { "@type": "AdministrativeArea", name: location.county },
+        ]
+      : [
+          { "@type": "City", name: "Heywood" },
+          { "@type": "City", name: "Rochdale" },
+          { "@type": "City", name: "Bury" },
+          { "@type": "City", name: "Oldham" },
+          { "@type": "AdministrativeArea", name: "Greater Manchester" },
+        ],
+    address,
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Auto Locksmith Services",

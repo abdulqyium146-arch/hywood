@@ -1,27 +1,46 @@
 import type { NextConfig } from "next";
 
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://quickkeylocksmiths.co.uk";
-
 const securityHeaders = [
   { key: "X-DNS-Prefetch-Control", value: "on" },
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "SAMEORIGIN" },
-  { key: "X-XSS-Protection", value: "1; mode=block" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   {
     key: "Permissions-Policy",
-    value: "camera=(), microphone=(), geolocation=(self)",
+    value: "camera=(), microphone=(), geolocation=(self), payment=()",
+  },
+  {
+    // HSTS: 2 years, include subdomains, eligible for browser preload list
+    key: "Strict-Transport-Security",
+    value: "max-age=63072000; includeSubDomains; preload",
   },
 ];
 
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
+
   turbopack: {
     root: __dirname,
   },
 
+  experimental: {
+    // Inline CSS eliminates render-blocking stylesheet requests — big LCP/FCP win
+    // for first-time visitors (ideal for an emergency-service landing site)
+    inlineCss: true,
+  },
+
   async headers() {
     return [
+      {
+        // Immutable cache for hashed static assets — safe to cache forever
+        source: "/_next/static/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
       {
         source: "/(.*)",
         headers: securityHeaders,
@@ -31,7 +50,7 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
-      // Ensure trailing-slash-free canonical URLs
+      // Canonical: strip trailing slashes
       {
         source: "/:path+/",
         destination: "/:path+",

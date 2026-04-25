@@ -136,6 +136,58 @@ export function generateFaqSchema(faqs: { question: string; answer: string }[]) 
   };
 }
 
+export function generateServiceSchema({
+  serviceName,
+  serviceType,
+  description,
+  url,
+  areaServed = "Heywood",
+  providerName = BUSINESS_NAME,
+}: {
+  serviceName: string;
+  serviceType: string;
+  description: string;
+  url: string;
+  areaServed?: string;
+  providerName?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType,
+    name: serviceName,
+    description,
+    url: `${SITE_URL}${url}`,
+    provider: {
+      "@type": "LocalBusiness",
+      name: providerName,
+      url: SITE_URL,
+      telephone: PHONE_NUMBER,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Heywood",
+        postalCode: "OL10",
+        addressRegion: "Greater Manchester",
+        addressCountry: "GB",
+      },
+    },
+    areaServed: {
+      "@type": "City",
+      name: areaServed,
+    },
+    availableChannel: {
+      "@type": "ServiceChannel",
+      servicePhone: {
+        "@type": "ContactPoint",
+        telephone: PHONE_NUMBER,
+        contactType: "customer support",
+        availableLanguage: "English",
+        hoursAvailable: "Mo-Su 00:00-23:59",
+      },
+    },
+  };
+}
+
 export function generateBreadcrumbSchema(items: { name: string; url: string }[]) {
   return {
     "@context": "https://schema.org",

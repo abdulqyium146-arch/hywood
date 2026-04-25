@@ -3,6 +3,7 @@ import Link from "next/link";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import WhyUs from "@/components/WhyUs";
+import MapEmbed from "@/components/MapEmbed";
 import {
   generateMetadata as buildMetadata,
   generateLocalBusinessSchema,
@@ -704,6 +705,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── MAP EMBED — GEO + AEO ─────────────────────────────────────────── */}
+      <MapEmbed />
 
       {/* ── FAQ ───────────────────────────────────────────────────────────── */}
       <FAQ faqs={homeFaqs} heading="Heywood Auto Locksmith — Frequently Asked Questions" />

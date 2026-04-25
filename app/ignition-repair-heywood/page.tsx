@@ -6,6 +6,7 @@ import WhyUs from "@/components/WhyUs";
 import Reviews from "@/components/Reviews";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
+import MapEmbed from "@/components/MapEmbed";
 import {
   generateMetadata as buildMetadata,
   generateLocalBusinessSchema,
@@ -247,6 +248,7 @@ export default function IgnitionRepairHeywoodPage() {
 
       <WhyUs />
       <Reviews />
+      <MapEmbed serviceName="Ignition Repair" />
       <FAQ faqs={faqs} heading="Ignition Repair Heywood — FAQs" />
 
       <section className="py-10 bg-gray-50">

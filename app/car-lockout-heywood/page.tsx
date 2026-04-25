@@ -6,6 +6,7 @@ import WhyUs from "@/components/WhyUs";
 import Reviews from "@/components/Reviews";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
+import MapEmbed from "@/components/MapEmbed";
 import {
   generateMetadata as buildMetadata,
   generateLocalBusinessSchema,
@@ -166,6 +167,7 @@ export default function CarLockoutHeywoodPage() {
 
       <WhyUs />
       <Reviews />
+      <MapEmbed serviceName="Car Lockout" />
       <FAQ faqs={faqs} heading="Car Lockout Heywood — FAQs" />
 
       {/* Related links */}

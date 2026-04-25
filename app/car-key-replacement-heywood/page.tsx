@@ -6,6 +6,7 @@ import WhyUs from "@/components/WhyUs";
 import Reviews from "@/components/Reviews";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
+import MapEmbed from "@/components/MapEmbed";
 import {
   generateMetadata as buildMetadata,
   generateLocalBusinessSchema,
@@ -167,6 +168,7 @@ export default function CarKeyReplacementHeywoodPage() {
 
       <WhyUs />
       <Reviews />
+      <MapEmbed serviceName="Car Key Replacement" />
       <FAQ faqs={faqs} heading="Car Key Replacement Heywood — FAQs" />
 
       <section className="py-10 bg-gray-50">

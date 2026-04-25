@@ -14,11 +14,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: `${BUSINESS_NAME} | 24/7 Auto Locksmith Greater Manchester`,
+    default: `${BUSINESS_NAME} | 24/7 Emergency Auto Locksmith Heywood OL10`,
     template: `%s | ${BUSINESS_NAME}`,
   },
   description:
-    "QuickKey Auto Locksmiths — professional 24/7 car lockout, key replacement and key programming services across Greater Manchester. 30-minute response. Call now.",
+    "Heywood Auto Locksmith — your local 24/7 mobile auto locksmith covering all of Heywood OL10. Car lockouts, lost keys, key programming, ignition repair. 30-minute response. Call now.",
   metadataBase: new URL(SITE_URL),
   openGraph: {
     siteName: BUSINESS_NAME,

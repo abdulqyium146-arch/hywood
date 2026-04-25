@@ -46,10 +46,10 @@ export default function WhyUs() {
             style={{ color: "#0B1F3A" }}
             className="text-3xl md:text-4xl font-extrabold mb-3"
           >
-            Why Choose QuickKey?
+            Why Choose Heywood Auto Locksmith?
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            When you're locked out, you need someone you can trust. Here's why hundreds of drivers across Greater Manchester choose us.
+            When you're locked out of your vehicle in Heywood, you need someone you can trust. Here's why hundreds of local drivers choose us every year.
           </p>
         </div>
 

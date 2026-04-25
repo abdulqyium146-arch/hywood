@@ -48,17 +48,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  // Flat Heywood service pages — primary conversion targets
+  const flatHeywoodPages: MetadataRoute.Sitemap = [
+    "car-lockout-heywood",
+    "car-key-replacement-heywood",
+    "key-programming-heywood",
+    "emergency-auto-locksmith-heywood",
+  ].map((slug) => ({
+    url: `${SITE_URL}/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.9,
+  }));
+
   // Legacy generic service pages
   const legacyServicePages: MetadataRoute.Sitemap = LEGACY_SERVICE_SLUGS.map((slug) => ({
     url: `${SITE_URL}/${slug}`,
     lastModified: now,
     changeFrequency: "monthly",
-    priority: 0.7,
+    priority: 0.65,
   }));
 
   return [
     ...homepage,
     ...heywoodHub,
+    ...flatHeywoodPages,
     ...heywoodServicePages,
     ...locationPages,
     ...legacyServicePages,

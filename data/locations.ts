@@ -18,7 +18,7 @@ export interface Location {
 
 export const PHONE_NUMBER = "01706 123 456";
 export const PHONE_HREF = "tel:+441706123456";
-export const BUSINESS_NAME = "QuickKey Auto Locksmiths";
+export const BUSINESS_NAME = "Heywood Auto Locksmith";
 export const RESPONSE_TIME = "30 minutes";
 
 export const locations: Location[] = [

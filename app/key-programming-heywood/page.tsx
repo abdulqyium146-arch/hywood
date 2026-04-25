@@ -17,9 +17,9 @@ import {
 import { PHONE_HREF, PHONE_NUMBER } from "@/data/locations";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Key Programming Heywood | Transponder Keys, Immobiliser Reset | 24/7",
+  title: "Key Programming Heywood | Transponder & Smart Keys, 24/7",
   description:
-    "Car key programming in Heywood OL10 — Heywood Auto Locksmith programmes transponder keys, proximity fobs and immobilisers for all makes at the roadside. Available 24/7. Call now.",
+    "New key won't start your car in Heywood? We programme transponder keys, smart fobs and immobilisers at the roadside for all makes — OBD & EEPROM methods. Available 24/7. Call now.",
   path: "/key-programming-heywood",
   keywords: [
     "key programming Heywood",

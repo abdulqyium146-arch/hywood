@@ -17,9 +17,9 @@ import {
 import { PHONE_HREF, PHONE_NUMBER } from "@/data/locations";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Ignition Repair Heywood | Key Won't Turn | Ignition Replacement | 24/7",
+  title: "Ignition Repair Heywood | Key Won't Turn? Fixed Fast, 24/7",
   description:
-    "Ignition repair in Heywood OL10 — key won't turn, stiff barrel, or ignition not responding? Heywood Auto Locksmith repairs or replaces car ignitions at the roadside. All makes, fixed price, 24/7. Call now.",
+    "Key won't turn in Heywood? We diagnose and repair car ignition faults at the roadside — stiff barrels, seizures, electronic faults, all makes. Fixed price, mobile service. Call now.",
   path: "/ignition-repair-heywood",
   keywords: [
     "ignition repair Heywood",

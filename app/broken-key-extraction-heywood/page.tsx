@@ -17,9 +17,9 @@ import {
 import { PHONE_HREF, PHONE_NUMBER } from "@/data/locations";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Broken Key Extraction Heywood | Key Snapped in Lock or Ignition | 24/7",
+  title: "Broken Key Extraction Heywood | Specialist Removal, 24/7",
   description:
-    "Broken key extraction in Heywood OL10 — key snapped in door lock or ignition? Heywood Auto Locksmith extracts broken keys and supplies a replacement at the roadside. All makes, 30-min response, 24/7. Call now.",
+    "Key snapped in your lock or ignition in Heywood? We extract broken keys using specialist tools — no lock damage, replacement cut on-site, all makes. 30-min response. Available 24/7. Call now.",
   path: "/broken-key-extraction-heywood",
   keywords: [
     "broken key extraction Heywood",

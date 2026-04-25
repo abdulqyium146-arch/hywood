@@ -17,9 +17,9 @@ import { HEYWOOD_SERVICES } from "@/data/services";
 import { PHONE_HREF, PHONE_NUMBER } from "@/data/locations";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Auto Locksmith Heywood | 24/7 Emergency Service | QuickKey Auto Locksmiths",
+  title: "Auto Locksmith Heywood | 24/7 Emergency, 30-Min Response",
   description:
-    "QuickKey Auto Locksmiths — Heywood's trusted 24/7 auto locksmith covering all of OL10. Car lockouts, lost keys, key programming, ignition repair and more. 30-minute response. Call now.",
+    "Need an auto locksmith in Heywood? Heywood Auto Locksmith covers all of OL10 24/7 — car lockouts, lost keys, key programming, ignition repair. 30-minute response. Fixed price. Call now.",
   path: "/heywood-auto-locksmith",
   keywords: [
     "auto locksmith Heywood",

@@ -17,9 +17,9 @@ import {
 import { PHONE_HREF, PHONE_NUMBER } from "@/data/locations";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Lost Car Keys Heywood | Replacement Cut & Programmed Same Day | 24/7",
+  title: "Lost Car Keys Heywood | Replaced Same Day, No Original Needed",
   description:
-    "Lost your car keys in Heywood OL10? Heywood Auto Locksmith replaces lost car keys at your location — no original needed, key cut and programmed same day. All makes. Available 24/7. Call now.",
+    "Lost your car keys in Heywood? We replace lost car keys at your location — no original required, key cut and programmed on-site, all makes. Immobiliser reset available. 24/7. Call now.",
   path: "/lost-car-keys-heywood",
   keywords: [
     "lost car keys Heywood",

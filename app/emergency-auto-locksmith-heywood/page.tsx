@@ -17,9 +17,9 @@ import {
 import { PHONE_HREF, PHONE_NUMBER } from "@/data/locations";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Emergency Auto Locksmith Heywood | 24/7 | 30-Min Response | Open Now",
+  title: "Emergency Auto Locksmith Heywood | 24/7, Open Now",
   description:
-    "Emergency auto locksmith in Heywood? Heywood Auto Locksmith is open 24/7, 365 days a year across Heywood OL10 — 30-minute response, every call answered. Car lockouts, lost keys, broken keys. Call now.",
+    "Auto locksmith emergency in Heywood? We're open 24/7, 365 days a year — every call answered, 30-min average response across OL10. Car lockouts, lost keys, broken keys. Call now.",
   path: "/emergency-auto-locksmith-heywood",
   keywords: [
     "emergency auto locksmith Heywood",

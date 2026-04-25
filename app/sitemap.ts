@@ -54,6 +54,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "car-key-replacement-heywood",
     "key-programming-heywood",
     "emergency-auto-locksmith-heywood",
+    "lost-car-keys-heywood",
+    "ignition-repair-heywood",
+    "broken-key-extraction-heywood",
   ].map((slug) => ({
     url: `${SITE_URL}/${slug}`,
     lastModified: now,

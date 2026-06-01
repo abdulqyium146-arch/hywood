@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
   },
   manifest: "/manifest",
+  verification: {
+    google: "hiY5eqE9FWZp9_NZeyiIIOZXMCqlpp41vGsSM5DtZns",
+  },
 };
 
 export default function RootLayout({

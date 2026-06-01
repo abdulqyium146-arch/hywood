@@ -103,9 +103,9 @@ export default function MapEmbed({ serviceName }: MapEmbedProps) {
         <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-md">
           <iframe
             title="Auto Locksmith in Heywood Greater Manchester - Heywood Auto Locksmith"
-            src="https://www.google.com/maps?q=Heywood,+Greater+Manchester,+UK&output=embed"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d75789.67515340152!2d-2.3815679405383303!3d53.5858360846051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bba45207db62f%3A0x3fd5583f2a267190!2sHeywood%2C%20Erresuma%20Batua!5e0!3m2!1seu!2s!4v1778392319996!5m2!1seu!2s"
             width="100%"
-            height="400"
+            height="450"
             loading="lazy"
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"

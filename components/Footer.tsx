@@ -91,7 +91,23 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-blue-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        {/* Trusted Partners */}
+        <div className="border-t border-blue-800 mt-10 pt-6 pb-4">
+          <p className="text-xs uppercase tracking-wider text-gray-500 mb-3 font-semibold">Trusted Locksmith Partners</p>
+          <ul className="flex flex-wrap gap-x-6 gap-y-2">
+            <li>
+              <a
+                href="https://affordablelocksmithorlando.com/"
+                className="text-sm text-gray-400 hover:text-yellow-400 transition-colors"
+                title="Affordable Locksmith Orlando"
+              >
+                affordable locksmith orlando
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="border-t border-blue-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
           <p>© {year} {BUSINESS_NAME}. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-gray-300 transition-colors">Privacy Policy</Link>
